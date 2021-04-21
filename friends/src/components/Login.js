@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { Container, TextField, makeStyles, Button, Grid } from '@material-ui/core';
+import { TextField, makeStyles, Button, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  loginForm: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-evenly'
+  formItem: {
+    marginBottom: '1.5rem'
   }
 });
 
@@ -48,7 +46,7 @@ export default function Login() {
     <>
       <form onSubmit={login} >
         <Grid container='true' alignContent="space-evenly" alignItems="center" justify="center" direction="column">
-          <Grid item>
+          <Grid item className={classes.formItem}>
             <TextField
               name="username"
               label="Username"
@@ -57,7 +55,7 @@ export default function Login() {
               onChange={handleChange}
             />
           </Grid>
-          <Grid item>
+          <Grid item className={classes.formItem}>
             <TextField
               name="standard-password-input"
               label="Password"
@@ -67,6 +65,7 @@ export default function Login() {
             />
           </Grid>
           <Button 
+            className={classes.formItem}
             variant='contained'
             color='primary'
             type='submit'
