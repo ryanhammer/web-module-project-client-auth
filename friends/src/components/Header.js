@@ -20,6 +20,11 @@ const useStyles = makeStyles({
 export default function Header() {
 
   const classes = useStyles();
+
+  const logout = () => {
+    window.localStorage.removeItem('token');
+  };
+
   return (
     <AppBar position='relative' className={classes.appBarMarg}>
       <Toolbar className={classes.navDisplayFlex}>
@@ -50,6 +55,14 @@ export default function Header() {
           className={classes.linkText}
         >
           Add Friends
+        </Link>
+        <Link
+          onClick={logout}
+          component={ RouterLink }
+          to='/' color='secondary'
+          className={classes.linkText}
+        >
+          Logout
         </Link>
       </Toolbar>
     </AppBar>

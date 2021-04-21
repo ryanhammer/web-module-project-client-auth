@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Friends from './components/Friends';
 import AddFriend from './components/AddFriend';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -14,12 +15,8 @@ function App() {
         <Header/>
         <main>
           <Switch>
-            <Route path='/addfriends'>
-              <AddFriend />
-            </Route>
-            <Route path='/friends'>
-              <Friends/>
-            </Route>
+            <PrivateRoute path='/addfriends' component={ AddFriend } />
+            <PrivateRoute path='/friends' component={ Friends } />
             <Route path='/login'>
               <Login/>
             </Route>

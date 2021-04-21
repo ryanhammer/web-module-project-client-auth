@@ -26,6 +26,7 @@ export default function Login() {
       ...credentials,
       [e.target.name]: e.target.value
     });
+    console.log(credentials);
   };
   
   const login = e => {
