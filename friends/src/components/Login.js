@@ -57,7 +57,7 @@ export default function Login() {
           </Grid>
           <Grid item className={classes.formItem}>
             <TextField
-              name="standard-password-input"
+              name="password"
               label="Password"
               type="password"
               value={credentials.password}
@@ -70,7 +70,7 @@ export default function Login() {
             color='primary'
             type='submit'
             >
-            Submit
+            Login
           </Button>
         </Grid>
       </form>
